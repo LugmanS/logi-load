@@ -4,7 +4,7 @@ import { params } from './config.js';
 
 export const options = {
   stages: [
-    { duration: '2m', target: 30000 }, 
+    { duration: '2m', target: 50000 }, 
     { duration: '1m', target: 0 },
   ],
 };
