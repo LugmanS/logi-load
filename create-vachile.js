@@ -11,7 +11,7 @@ export const options = {
 
 export default function() {
 
-    const url = `https://api.loginextsolutions.com/DeliveryMediumApp/mile/v1/create`;
+    const url = `https://api.loginextsolutions.com/VehicleApp/mile/v1/create`;
 
     const payload = JSON.stringify([
     {
