@@ -15,19 +15,17 @@ export default function() {
 
     const payload = JSON.stringify([
     {
-        "employeeId": Date.now(),
-        "userGroupName": "try",
-        "branchName": "A",
-        "deliveryMediumMasterName": "Jamesbond",
-        "phoneNumber": Math.floor(Math.random() * 9000000000) + 1000000000,
-        "userName": `hacker-${Date.now}`,
-        "password": "james0034"
+        "vehicleNumber": Date.now(),
+        "branchName": "1",
+        "vehicleType": "2 Wheeler"
+        
     }
-]);
+]
+);
 
     let response = http.post(url, payload, params);
 
-    console.log('CREATE-ORDER-COMMENT:', response);
+    console.log('CREATE-VACHILE:', response);
 
-    check(response, { 'CREATE-ORDER-COMMENT:': (r) => r.status === 200 });
+    check(response, { 'CREATE-VACHILE:': (r) => r.status === 200 });
 }

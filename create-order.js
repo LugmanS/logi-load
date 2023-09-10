@@ -1,10 +1,10 @@
 import http from 'k6/http';
 import { check } from "k6";
-import { params } from '../config.js';
+import { params } from './config.js';
 
 export const options = {
   stages: [
-    { duration: '2m', target: 2 }, 
+    { duration: '2m', target: 15000 }, 
     { duration: '1m', target: 0 },
   ],
 };
@@ -16,8 +16,8 @@ export default function() {
     const payload = JSON.stringify([
        {
     "shipmentRequestType":"PICKUP",
-    "pickupAccountCode":"434343",
-    "pickupOrderNo":"2232323223",
+    "pickupAccountCode": Date.now(),
+    "pickupOrderNo": Date.now(),
     "pickupBranch":"Carters",
     "pickupOrderDate": "11, Sep 2023 20:54",
     "pickupcustomerID": "32324233",

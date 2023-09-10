@@ -11,23 +11,21 @@ export const options = {
 
 export default function() {
 
-    const url = `https://api.loginextsolutions.com/DeliveryMediumApp/mile/v1/create`;
+    const url = `https://api.loginextsolutions.com/DriverApp/mile/v1/create`;
 
     const payload = JSON.stringify([
     {
-        "employeeId": Date.now(),
-        "userGroupName": "try",
-        "branchName": "A",
-        "deliveryMediumMasterName": "Jamesbond",
+        "driverName": "Untitled Driver",
         "phoneNumber": Math.floor(Math.random() * 9000000000) + 1000000000,
-        "userName": `hacker-${Date.now}`,
-        "password": "james0034"
+        "licenseNumber": Date.now(),
+        "countryShortCode":"USA"
+
     }
 ]);
 
     let response = http.post(url, payload, params);
 
-    console.log('CREATE-ORDER-COMMENT:', response);
+    console.log('CREATE-DRIVER:', response);
 
-    check(response, { 'CREATE-ORDER-COMMENT:': (r) => r.status === 200 });
+    check(response, { 'CREATE-DRIVER:': (r) => r.status === 200 });
 }
